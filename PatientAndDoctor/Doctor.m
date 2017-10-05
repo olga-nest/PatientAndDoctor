@@ -1,4 +1,5 @@
 #import "Doctor.h"
+#import "Patient.h"
 
 @implementation Doctor
 
@@ -10,6 +11,10 @@
         _specialization = specialization;
     }
     return self;
+}
+
+-(void)acceptPatient: (Patient *) patient {
+    
 }
 
 
