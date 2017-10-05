@@ -9,7 +9,7 @@
     if (self) {
         _name = name;
         _specialization = specialization;
-        _allAcceptedPatients = [[NSMutableArray alloc]init];
+        _allAcceptedPatients = [[NSMutableSet alloc]init];
     }
     return self;
 }

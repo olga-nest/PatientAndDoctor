@@ -6,7 +6,7 @@
 
 @property (nonatomic) NSString *specialization;
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSMutableArray<Patient *> *allAcceptedPatients;
+@property (nonatomic) NSMutableSet<Patient *> *allAcceptedPatients;
 
 - (instancetype)initWithName:(NSString *)name andSpecialization:(NSString*)specialization;
 
