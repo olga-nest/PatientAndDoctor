@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "Patient.h"
+
+@class Patient;
 
 @interface Doctor : NSObject
 
