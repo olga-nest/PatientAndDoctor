@@ -17,6 +17,7 @@
 - (void)visitDoctor: (Doctor *) doctor {
     if (self.hasValidHealthCard == YES) {
         self.acceptedByDoctor = YES;
+        [doctor.allAcceptedPatients addObject:self];
         NSLog(@"%@ has a valid health card and is accepted by %@ %@", self.name, doctor.specialization, doctor.name);
     } else {
         self.acceptedByDoctor = NO;
