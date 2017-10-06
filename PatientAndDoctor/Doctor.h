@@ -10,6 +10,7 @@
 
 - (instancetype)initWithName:(NSString *)name andSpecialization:(NSString*)specialization;
 
--(void)acceptPatient: (Patient *) patient;
+//-(void)acceptPatient: (Patient *) patient;
+-(void)prescribeMedication: (Patient *) patient;
 
 @end

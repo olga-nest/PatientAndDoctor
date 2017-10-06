@@ -3,13 +3,15 @@
 
 @implementation Patient
 
-- (instancetype)initWithName:(NSString *)name andAge:(int)age andHasValidHealthCard:(BOOL)card
+- (instancetype)initWithName:(NSString *)name andAge:(int)age andHasValidHealthCard:(BOOL)card andSymptoms:(NSString *)symptoms
 {
     self = [super init];
     if (self) {
         _name = name;
         _age = age;
         _hasValidHealthCard = card;
+        _symptoms = symptoms;
+        
     }
     return self;
 }
@@ -25,13 +27,15 @@
     }
 }
 
--(void)askDoctorsName {
-    
+
+-(void)requestMedication:(Doctor *)doctor {
+    if ([doctor.allAcceptedPatients containsObject:self] == YES) {
+        [doctor prescribeMedication:self];
+    } else {
+        NSLog(@"No medication for %@", self.name);
+    }
 }
 
--(void)askDoctorsSpecialization {
-    
-}
 
 
 @end
