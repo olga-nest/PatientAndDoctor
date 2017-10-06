@@ -1,5 +1,6 @@
 #import "Doctor.h"
 #import "Patient.h"
+#import "Prescription.h"
 
 @implementation Doctor
 
@@ -10,6 +11,7 @@
         _name = name;
         _specialization = specialization;
         _allAcceptedPatients = [[NSMutableSet alloc]init];
+        _allPrescriptions = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -20,9 +22,15 @@
 
 - (void)prescribeMedication: (Patient *) patient {
     if ([patient.symptoms isEqual: @"insomnia"]) {
-        NSLog(@"Here is your sleep pill");
+        Prescription *prescription = [[Prescription alloc]initWithPatientName:patient.name andMedication:@"sleeping pill"];
+        [self.allPrescriptions addObject:prescription];
+        NSLog(@"%@ got %@", patient.name, prescription.medication);
+        NSLog(@"Total prescriptions %lu", (unsigned long)[self.allPrescriptions count]);
     } else if ([patient.symptoms isEqual: @"headache"]) {
-        NSLog(@"Here is your magic pill");
+        Prescription *prescription = [[Prescription alloc]initWithPatientName:patient.name andMedication:@"magic pill"];
+        [self.allPrescriptions addObject:prescription];
+        NSLog(@"%@ got %@", patient.name, prescription.medication);
+        NSLog(@"Total prescriptions %lu", (unsigned long)[self.allPrescriptions count]);
     } else {
         NSLog(@"You don't need a medication");
     }

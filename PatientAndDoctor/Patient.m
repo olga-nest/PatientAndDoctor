@@ -1,5 +1,6 @@
 #import "Patient.h"
 #import "Doctor.h"
+#import "Prescription.h"
 
 @implementation Patient
 
