@@ -7,6 +7,10 @@ static NSMutableArray *allPrescriptions;
 
 @implementation Doctor
 
++(void)initialize {
+    allPrescriptions = [[NSMutableArray alloc]init];
+}
+
 - (instancetype)initWithName:(NSString *)name andSpecialization:(NSString*)specialization
 {
     self = [super init];
@@ -14,7 +18,6 @@ static NSMutableArray *allPrescriptions;
         _name = name;
         _specialization = specialization;
         _allAcceptedPatients = [[NSMutableSet alloc]init];
-        allPrescriptions = [[NSMutableArray alloc]init];
     }
     return self;
 }
